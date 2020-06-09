@@ -1,0 +1,140 @@
+
+
+%% Entropic Regression Options Set
+% Create Entropic Regression options structure
+
+%% Syntax
+%% 
+% 
+%   options = eroptset
+%   options = eroptset('param1',value1,'param2',value2,...)
+% 
+
+%% Description
+%%
+%
+% * options = eroptset (with no input arguments) creates a structure called 
+% options that contains the options, or parameters, for the Entropic Regression
+% algorithm and sets parameters to [], indicating default values will be used.
+% * options = eroptset('param1',value1,'param2',value2,...) creates a structure
+% called options and sets the value of 'param1' to value1, 'param2' to 
+% value2, and so on. Any unspecified parameters are set to their default values.
+
+   
+%% Examples
+%% 
+% 
+%   options = eroptset
+%   options = eroptset('numPerm',500, 'alpha', 0.95)
+% 
+%
+% The possible options are discussed below within different sections
+
+
+%% Version
+% This function is a part of Entropic Regression Software Package (erfit),
+% version 1.1.0.
+% To report any bugs or issues: 
+%
+%   Abd AlRahman R. AlMomani
+%   aaalmoma(at)clarkson(dot)edu
+%   May 2020
+% ---------------------------------------------------
+
+%% Function Body
+%
+%%
+function options = eroptset( varargin )
+p = inputParser;
+
+%% General Options
+
+% Use parallel computations.
+% {default: false}
+% Options: true, false
+p.addParameter('useparallel',  false);
+
+% time-step size of sampled data {default: 0.01}
+p.addParameter('h',      0.01);
+
+% Indices to keep, that the user is confident the are relevent {default: empty}
+p.addParameter('keepin', []);
+
+% The estimator of parameters magnitude after discovery of relevent
+% functions.
+% {default: @lsfit} The ordinary least squares
+% Options: @lsfit, @iterativeRWLS 
+% iterativeRWLS is the iterative re-weighted least squares method using the
+% robust fit.
+p.addParameter('grayModelEstimator',      @lsfit);
+
+
+% In case of difficult and highly uncertin problems
+% The use have the choice to skip the forward selection, which result in
+% more accurate solution, comes with the cost of higher computations.
+% {default: false}
+% Options: true, false
+p.addParameter('skipForward', false);
+
+%% Forward Selection Options
+
+% Indices to keep during the forward selection {default: empty}
+p.addParameter('fkeepin', []);
+
+
+%% Backward Elimination Options
+
+
+%% Mutual Information Estimators Options
+
+% Mutual information estimator to be used
+% {default: @MIKnn} (Knn estimator)
+% Options: @MIKnn, @MIDiscrete
+p.addParameter('MIEstimator',      @MIKnn);
+
+
+% Bin method used for data discretization (in case of using MIDisctrete
+% estimator)
+% {default: fixed)
+% Options: 'fixed', 'scott', 'fd', 'integers', 'sturges', 'sqrt'
+% For the detailes of each method, refer to Matlab histcount documentation.
+p.addParameter('BinMethod',      'fixed');
+
+% Number of bins to use, in case of using 'fixed' as a 'BinMethod' option.
+p.addParameter('numBins', 16);
+
+
+% Lp Measure of the distance in Knn estimator
+% {default: inf} (Chebyshev distance)
+% options: positive integer >= 1
+p.addParameter('p',      inf);
+
+% Number of nearest neighbors K, in Knn Mutual information estimator.
+% {default: 2}
+% options: positive integer >= 1
+p.addParameter('K',   2, @(s) (1<=s));
+
+
+% Mutual independence shuffle test.
+% Setting this option to (true) can be expensive since it will apply the
+% shuffle test at each call of the conditional mutual information
+% estimator. However, it can provide high confidence in the results
+% accuracy.
+% This option can be a reliable choice when that problem has a few
+% candidate functions, but with a high degree of uncertainty.
+p.addParameter('EmbeddedShuffleTest', false);
+
+
+% Confidence parameter of the shuffle test. ( 0<= alpha <= 1 )
+p.addParameter('alpha',   0.99, @(s) (0<=s) && (s<=1));
+
+
+% Number of permutation to be used in shuffel test: numPerm
+p.addParameter('numPerm',     200, @isnumeric);
+
+
+
+p.parse(varargin{:});
+options = p.Results;
+
+end
