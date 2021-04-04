@@ -34,7 +34,7 @@ In a wide range of scientific fields, such as but not limited to biology, epidem
 
 # Mathematics
 
-In this paper, we introduce an efficient Matlab implementation for the Entropic Regression method we introduced in [@almomani2020entropic], [@almomani2019prediction]. Entropic Regression (ER), is a data-driven discovery method for the underlying dynamics using sparse system identification. ER uses the conditional mutual information as an information-theoretic criterion and iteratively select relevant basis functions in a greedy search optimization scheme in terms of information criterion objective. Consider the problem in the matrix form:
+In this paper, we introduce an efficient Matlab implementation for the Entropic Regression method we introduced in [@AlMomani:2020], [@almomani2019prediction]. Entropic Regression (ER), is a data-driven discovery method for the underlying dynamics using sparse system identification. ER uses the conditional mutual information as an information-theoretic criterion and iteratively select relevant basis functions in a greedy search optimization scheme in terms of information criterion objective. Consider the problem in the matrix form:
 
 \begin{equation} \label{eq:mainMatrixForm}
     \dot{X} = F(X) =  \Phi(X) \mathbf{\beta} 
