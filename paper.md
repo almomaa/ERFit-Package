@@ -1,6 +1,5 @@
 ---
 title: "ERFit: Entropic Regression Fit Matlab Package, for Data-Driven System Identification of Underlying Dynamic Equations"
-
 tags:
   - MATLAB
   - Modeling
