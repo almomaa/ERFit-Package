@@ -1,5 +1,6 @@
 ---
 title: 'ERFit: Entropic Regression Fit Matlab Package, for Data-Driven System Identification of Underlying Dynamic Equations'
+bibliography: paper.bib
 tags:
   - MATLAB
   - Modeling
@@ -20,7 +21,7 @@ affiliations:
  - name: Clarkson Center for Complex Systems Science 
  - index: 2
 date: 4 April 2021
-bibliography: paper.bib
+
 
 
 # Summary
