@@ -1,26 +1,22 @@
 ---
-title: "ERFit: Entropic Regression Fit Matlab Package, for Data-Driven System Identification of Underlying Dynamic Equations"
+title: 'ERFit: Entropic Regression Fit Matlab Package, for Data-Driven System Identification of Underlying Dynamic Equations'
 tags:
   - MATLAB
   - Modeling
   - Sparse Regression.
   - Nonlinear dynamics.
- 
- 
 authors:
   - name: Abd AlRahman AlMomani
     orcid: 0000-0001-9362-7459
     affiliation: "1, 2"
   - name: Erik Bollt
     affiliation: "1, 2"
-
 affiliations:
  - name: Electrical and Computer Engineering Department, Clarkson Universit
    index: 1
  - name: Clarkson Center for Complex Systems Science 
  - index: 2
 date: 4 April 2021
-
 bibliography: paper.bib
 ---
 
