@@ -90,6 +90,7 @@ The result of the backward ER is a set of indices $s$. We emphasize here that th
 
 
 # Acknowledgements
+This work was funded in part by the Simons Foundation (Grant No. 318812), the Army Research Office (Grant No. W911NF-16-1-0081), the Office of Naval Research (ONR) (Grant No. N00014-15-1-2093), and the DARPA
 
 
 
