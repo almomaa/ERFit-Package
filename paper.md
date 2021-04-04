@@ -15,7 +15,7 @@ affiliations:
  - name: Electrical and Computer Engineering Department, Clarkson Universit
    index: 1
  - name: Clarkson Center for Complex Systems Science 
- - index: 2
+   index: 2
 date: 4 April 2021
 bibliography: paper.bib
 ---
@@ -98,12 +98,6 @@ While in the forward selection stage, we further require the following. Let $I_{
     HLT1 = \begin{cases} 1, \text{ IF } I(\dot{X}; \mathcal{V}(\dot{X},\Phi_i)|\mathcal{V}(\dot{X},\Phi_{s_{k-1}})) < tol, \text{ OR } (I_a - I_s) < tol \\ 0, \text{otherwise.} \end{cases}
 \end{equation}
 where $I(\dot{X}; \mathcal{V}(\dot{X},\Phi_i)|\mathcal{V}(\dot{X},\Phi_{s_{k-1}}))$ is what indicated in \autoref{eq:forward}
-
-# Citations
-
-
-
-# Figures
 
 
 # Acknowledgements
